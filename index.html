@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Soha</title>
+
+  <style>
+    html, body {
+      margin: 0;
+    }
+
+    body {
+      background-color:white;
+    background-image: linear-gradient(90deg, rgba(200,0,0,.5) 50%, transparent 50%),
+    linear-gradient(rgba(200,0,0,.5) 50%, transparent 50%);
+    background-size:50px 50px;
+    }
+
+    input {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    .scene {
+      width: 150px; height: 150px;
+      margin: 20vh auto;
+      
+      perspective: 500px;
+    }
+
+    .cube {
+      width: 100%; height: 100%;
+      position: relative;
+      
+      transform-style: preserve-3d;
+      transition: transform 2s;
+    /*   pointer-events: none; */
+    }
+
+    .scene:hover .cube {
+      transform: rotateY(-270deg);
+    /*   transform: rotate3d(1, 1, 0, -270deg); */
+    }
+
+    .cube-face {
+      width: 100%; height: 100%;
+      position: absolute;
+      opacity: 0.925;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 5rem;
+      color: #fff;
+    }
+
+    .front {
+      background:
+    linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+    linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+    background-color:#708090;
+    background-size: 64px 128px;
+      transform: translateZ(75px);
+    }
+
+    .back {
+    background: 
+    radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent),
+    radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent) 50px 50px,
+    linear-gradient(#A8B1BB 8px, transparent 8px) 0 -4px,
+    linear-gradient(90deg, #A8B1BB 8px, transparent 8px) -4px 0;
+    background-color: slategray;
+    background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
+    background-color:#e1ebbd;
+    background-size: 128px 128px;
+      transform: rotateY(180deg) translateZ(75px);
+    }
+
+    .left {
+    background-color: #6d695c;
+    background-image:
+    repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+    repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+    linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+    linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+    background-size: 70px 120px;
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+      transform: rotateY(-90deg) translateZ(75px);
+    }
+
+    .right {
+    background: 
+    radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+    radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
+    background-color: slategray;
+    background-size:75px 100px;
+      transform: rotateY(90deg) translateZ(75px);
+    }
+
+    .top {
+    background-color:#def;
+    background-image: radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%),
+    radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%);
+    background-size:80px 80px;
+    background-position:0 0, 40px 40px;
+      transform: rotateX(90deg) translateZ(75px);
+    }
+
+    .bottom {
+    background-color:#556;
+    background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a), 
+    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
+    background-size:80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+      transform: rotateX(-90deg) translateZ(75px);
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="cube">
+      <div class="cube-face front">S</div>
+      <div class="cube-face back">H</div>
+      <div class="cube-face left">A</div>
+      <div class="cube-face right">O</div>
+      <div class="cube-face top"></div>
+      <div class="cube-face bottom"></div>
+    </div>
+  </div>
+</body>
+</html>
