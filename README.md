@@ -1,5 +1,5 @@
 # Soha
-A CSS3 3d cube of a friend name's letters. One of a series of projects I built using CSS3 transforms and animation and SVG animation to cheer up my friends :D.
+A CSS3 3d rotating cube of a friend name's letters. One of a series of projects I built using CSS3 transforms and animation and SVG animation to cheer up my friends :D.
 
 ## Live
 https://moaaz-bhnas.github.io/soha/
